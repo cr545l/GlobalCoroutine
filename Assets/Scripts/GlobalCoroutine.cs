@@ -1,8 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Lofle
 {	
-	private class GlobalCoroutine : MonoBehaviour
+	public class GlobalCoroutine : MonoBehaviour
 	{
 		private static GlobalCoroutine _instance = null;
 		public static GlobalCoroutine Instance
@@ -13,7 +14,11 @@ namespace Lofle
 				{
 					GameObject gameObject = new GameObject();
 					_instance = gameObject.AddComponent<GlobalCoroutine>();
+#if NET_4_6
 					_instance.name = nameof( GlobalCoroutine );
+#else
+					_instance.name = "GlobalCoroutine";
+#endif
 				}
 
 				return _instance;
