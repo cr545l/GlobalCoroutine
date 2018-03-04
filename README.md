@@ -28,7 +28,7 @@ public static class NonMono
     {
         Lofle.GlobalCoroutine.Invoke( Update() ); // <- StartCoroutine과 동일
     }
-	
+
     private static IEnumerator Update()
     {
         for( int i = 0; i < 10; ++i )
